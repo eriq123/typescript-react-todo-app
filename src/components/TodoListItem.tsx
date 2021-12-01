@@ -1,16 +1,13 @@
 import { Card, Form } from 'react-bootstrap';
 
-export default function TodoList({
-  description,
-  isCompleted,
-  handleRemoveTask,
-  toggleStatus,
-}: {
+interface TodoListInterface {
   description: string;
   isCompleted: boolean;
   handleRemoveTask: () => void;
   toggleStatus: () => void;
-}) {
+}
+
+export default function TodoList({ description, isCompleted, handleRemoveTask, toggleStatus }: TodoListInterface) {
   return (
     <Card body className={`mb-1 ${isCompleted ? 'complete' : ''}`}>
       <Form className="d-flex justify-content-between">
